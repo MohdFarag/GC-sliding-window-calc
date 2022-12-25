@@ -3,7 +3,7 @@ Description:
     - Sliding window program to compute the %GC in sequence of nucleotides.
 Input:
     - DNA sequence
-    - The window size (assume the window increment is |)
+    - The window size (assume the window increment is 1)
 Return:
     - Nucleotide number
     - %GC for each window
@@ -95,7 +95,7 @@ def main():
 
 
     print("\nStart processing ...\n")
-
+    
     c = 1
     for chunk in get_chunks(sequence, window_size):
         g_count = float(chunk.count("G")) # Count G in sequence
@@ -108,6 +108,7 @@ def main():
         print(f"Nucleotide number: {len(chunk)}")
         print(f"There are {g_count} Gs, {c_count} Cs, {a_count} As and {t_count} Ts, in the DNA strand.")
         print(f"GC content is: {(g_count+c_count)*100/(a_count+t_count+g_count+c_count+n_count)}%")
+        
         print("======================")
         
         c += 1
