@@ -23,7 +23,6 @@ def get_args():
     parser.add_argument('size', metavar='size', help='Enter window size')
 
     args = parser.parse_args()
-
     return args.mode, args.sequence, args.size
 
 
